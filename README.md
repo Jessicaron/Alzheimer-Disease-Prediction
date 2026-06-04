@@ -1,107 +1,164 @@
-# 🧠 Alzheimer's Disease Prediction Using RNA-Seq Gene Expression Data
-## 👩‍💻 Team Members
+# Jessica Amgad Anis ID:231001218
 
-- **Jessica Amgad Anis** — ID: 231001218
+# Alzheimer's Disease Prediction Using RNA-Seq Gene Expression Data
 
----
-
-## 🏫 Course
-
-CBIO313: Data Mining and Machine Learning — Final Project
----
-
-## 📋 Project Description
-
-This project applies machine learning techniques to predict Alzheimer's disease
-using RNA-Seq gene expression data. The complete data science pipeline is followed,
-including data preprocessing, exploratory data analysis (EDA), feature engineering,
-feature selection, model training, hyperparameter tuning, evaluation, and deployment
-via a Flask web application.
-
-The dataset contains gene expression counts from 30 biological samples classified
-into Alzheimer's Disease (AD) and Control groups (Old and Young Controls).
-The problem is framed as a binary classification task where AD samples are labeled
-as 1 and control samples as 0.
+This project uses machine learning techniques to predict Alzheimer's disease using RNA-Seq gene expression data. The workflow includes data preprocessing, exploratory data analysis (EDA), feature engineering, feature selection, model training, hyperparameter tuning, evaluation, and deployment using Streamlit.
 
 ---
 
-## 📂 Dataset
+# Project Objective
 
-- **Source:** NCBI GEO Database
-- **Accession:** GSE153873
-- **Download Link:** https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153873
-- **File used:** `GSE153873_summary_count.star.txt`
-- **Size:** 30 samples × 27,000+ gene expression features
-- **Note:** The raw dataset is not pre-cleaned. Preprocessing steps including
-  constant gene removal and feature selection were applied as part of this project.
+The main objective of this project is to develop a machine learning model capable of distinguishing Alzheimer's disease samples from control samples using RNA-seq gene expression data.
 
+---
 
+# Dataset Description
 
-## 🚀 How to Run the Project
+The dataset contains RNA-seq gene expression counts collected from multiple biological samples.
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
-```
+Classes:
+- Alzheimer's Disease (AD)
+- Old Controls
+- Young Controls
 
-### 2. Install Required Libraries
-```bash
+The classification problem was converted into a binary classification task:
+- AD = 1
+- Control = 0
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Streamlit
+- Joblib
+
+---
+
+# Machine Learning Workflow
+
+## 1. Data Preprocessing
+- Data loading
+- Dataset transposition
+- Target variable creation
+- Removing constant genes
+- Feature scaling
+
+## 2. Exploratory Data Analysis (EDA)
+- Distribution analysis
+- Boxplots
+- Heatmaps
+- Scatterplots
+- Violin plots
+
+## 3. Feature Engineering
+- Created Neuro Activity Index feature
+
+## 4. Feature Selection
+- SelectKBest with ANOVA F-test
+- Top informative genes selected
+
+## 5. Machine Learning Models
+The following models were trained and evaluated:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+## 6. Hyperparameter Tuning
+- GridSearchCV used for Random Forest optimization
+
+## 7. Model Evaluation
+Evaluation metrics:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+---
+
+# Final Model Performance
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|------|------|------|------|------|
+| Logistic Regression | 1.00 | 1.00 | 1.00 | 1.00 |
+| Decision Tree | 0.83 | 0.67 | 1.00 | 0.80 |
+| Random Forest | 1.00 | 1.00 | 1.00 | 1.00 |
+
+The Random Forest model was selected as the final deployment model.
+
+---
+
+# Deployment
+
+The application was deployed using Streamlit Community Cloud.
+
+Features:
+- Interactive web interface
+- Real-time prediction
+- Public cloud deployment
+- GitHub integration
+# link for web app 
+https://alzheimer-disease-prediction-dymtmrk4lczrtixxfdgprg.streamlit.app/
+--
+
+# Repository Structure
+
+```text
+Alzheimer_Project/
+│
+├── app.py
+├── requirements.txt
+├── model.pkl
+├── notebook.ipynb
+├── dataset.csv
+└── README.md
+
+# Installation
+
+Clone the repository:
+
+git clone https://github.com/Jessicaron/Alzheimer-Disease-Prediction.git
+
+Move into the project folder:
+
+cd Alzheimer-Disease-Prediction
+
+Install dependencies:
+
 pip install -r requirements.txt
-```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-flask
-joblib
 
-### 3. Run the Notebook
-Open `Machine_learning_project.ipynb` in Jupyter Notebook or JupyterLab and run
-all cells from top to bottom.
+Run the Streamlit app:
 
-### 4. Run the Flask Web App
-```bash
-python app.py
-```
-Then open your browser and go to: https://alzheimer-disease-prediction-dymtmrk4lczrtixxfdgprg.streamlit.app/
+streamlit run app.py
+Streamlit Deployment
 
+# The application can be deployed directly using:
 
-Install all at once:
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn flask joblib
-```
+GitHub repository
+Streamlit Community Cloud
+Challenges Encountered
 
----
+During deployment and development:
 
-## 📊 Results
+Dependency compatibility issues
+GitHub authentication problems
+Incorrect package names
+Python version conflicts
+Streamlit deployment path configuration
 
-### Model Comparison
+These issues were resolved successfully.
 
-| Model                | Accuracy | Precision | Recall | F1-Score |
-|----------------------|----------|-----------|--------|----------|
-| Logistic Regression  | 1.00     | 1.00      | 1.00   | 1.00     |
-| Decision Tree        | 0.83     | 0.67      | 1.00   | 0.80     |
-| Random Forest ✅     | 1.00     | 1.00      | 1.00   | 1.00     |
+# Conclusion
 
-**Best Model:** Random Forest (after GridSearchCV hyperparameter tuning)
+This project demonstrates a complete machine learning pipeline for Alzheimer's disease prediction using RNA-seq gene expression data. The project highlights the importance of preprocessing, feature selection, model evaluation, and deployment in bioinformatics and healthcare applications.
 
-### Top 3 Most Important Genes
-- ERI3-IT1
-- DPH2
-- LHX4-AS1
+# Author
 
----
-
-## 📁 Project Structure
-├── Machine_learning_project.ipynb   # Main notebook
-├── app.py                           # Flask deployment app
-├── alzheimers_model.pkl             # Saved trained model
-├── feature_selector.pkl             # Saved feature selector
-├── requirements.txt                 # Required libraries
-├── screenshots/                     # Output plots and screenshots
-└── README.md                        # This file
-
----
+Jessica Ron
 
