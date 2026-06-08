@@ -106,6 +106,9 @@ Features:
 # link for web app 
 https://alzheimer-disease-prediction-dymtmrk4lczrtixxfdgprg.streamlit.app/
 --
+# link for video presentation
+https://drive.google.com/file/d/1V65g4cyMpBDgctcJFHddJ7i6kovDqoZj/view?usp=sharing
+
 
 # Repository Structure
 
